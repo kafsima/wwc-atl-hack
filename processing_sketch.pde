@@ -3,28 +3,38 @@ import java.util.*;
 import java.text.*;
 
 
-Serial mySerial;
-String val;
+int end = 10;
+String serial;
+String prevValue = "";
+Serial port;
 PrintWriter output;
 
 void setup() {
-  size(800, 600);
-  
-  println(Serial.list());
-  
-  String portName = Serial.list()[3];
-  mySerial = new Serial(this, portName, 115200);
+  //println(port.list());
   
   output = createWriter("sensor_data.txt");
+  
+  String portName = Serial.list()[3];
+  port = new Serial(this, portName, 115200);
+  port.clear();
+  
+  serial = port.readStringUntil(end);
+  serial = null;
 }
 
-void draw () {
-  if (mySerial.available() > 0) {
-    val = mySerial.readStringUntil('\n');
+void draw() {
+  while (port.available() > 0) {
+    serial = port.readStringUntil(end);
   }
-  if (val != null) {
+  if (serial != null && prevValue != serial) {
     String now = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-    output.println(now + '|' + val);
+    output.println(now + '|' + serial);
+    prevValue = serial;
   }
-  //println(val);
+}
+
+void keyPressed() {
+  output.flush();
+  output.close();
+  exit();
 }

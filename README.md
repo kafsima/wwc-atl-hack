@@ -10,7 +10,7 @@ Demonstrate IoT proof-of-concept for low-cost remove sensing system for leak det
 Small- to mid-size fuel farms (<100 employees, <50M revenue), needing an out-of-the-box solution
 
 ###Technologies Used:
-Arduino, Processing, Firebase (runs on JSON), Python ([Pyrebase](https://github.com/thisbejim/Pyrebase)), Bootstrap
+Arduino, Processing, Firebase (JSON), Python ([Pyrebase](https://github.com/thisbejim/Pyrebase)), Jupyter
 
 ###Schematic:
 <img src="https://github.com/kafsima/wwc-atl-hack/blob/master/20160731_135030.jpg" width="60%">

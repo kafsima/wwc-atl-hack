@@ -16,7 +16,8 @@ Arduino, Firebase, Python, Bootstrap
 <img src="https://github.com/kafsima/wwc-atl-hack/blob/master/20160731_135030.jpg" width="60%">
 
 ###Next steps:
---Development of UI/UX i.e. getting data out of Firebase
---Wireless connection for Arduino board
---Add additional sensor functionality
---Mold plastic case for commercial product
+
+- Development of UI/UX i.e. getting data out of Firebase
+- Wireless connection for Arduino board
+- Add additional sensor functionality
+- Mold plastic case for commercial product

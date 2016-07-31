@@ -13,4 +13,4 @@ Small- to mid-size fuel farms (<100 employees, <50M revenue), needing an out-of-
 Arduino, Firebase, Python, Bootstrap
 
 ###Schematic:
-![Schematic](/relative/path/to/20160731_135030.jpg?raw=true "Project Schematic")
+![Schematic](/blob/master/20160731_135030.jpg?raw=true "Project Schematic")

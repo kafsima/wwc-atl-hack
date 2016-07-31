@@ -17,7 +17,9 @@ Arduino, Processing, Firebase (runs on JSON), Python ([Pyrebase](https://github.
 
 ###Next steps:
 
-- Development of UI/UX i.e. getting data out of Firebase
-- Wireless connection for Arduino board
+- Development of UI/UX i.e. getting data out of Firebase and running it against user-set threshold levels
+- Develop SMS alert system for real-time monitoring
+- Wireless connection for multiple Arduino boards to talk to centralized server
+- External power supply for Arduino (battery pack?)
 - Add additional sensor functionality
 - Mold plastic case for commercial product

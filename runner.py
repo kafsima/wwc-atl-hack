@@ -4,9 +4,11 @@ import sys
 import time
 import logging
 import subprocess
+import uuid
 from watchdog.observers import Observer
 from watchdog.events import LoggingEventHandler
 
+INSTANCE = uuid.uuid4()
 MYPATH = '/Users/reese/hack/sensor-data/'
 config = {
   "apiKey": "apiKey",
@@ -18,6 +20,7 @@ config = {
 firebase = pyrebase.initialize_app(config)
 db = firebase.database()
 
+
 class Event(LoggingEventHandler):
     def on_modified(self, event):
         filename = event.src_path
@@ -26,8 +29,10 @@ class Event(LoggingEventHandler):
         # print(line)
 
     def postData(self, val):
+        sensor_name = 'sensor_' + INSTANCE.hex[0:8]
+
         data = {"temp": val}
-        db.child("temp_sensor_data").push(data)
+        db.child("temp_sensors").child(sensor_name).push(data)
 
 
 

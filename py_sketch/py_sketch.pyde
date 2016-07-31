@@ -13,7 +13,7 @@ def setup():
 
 def draw():
     pass
-
+    
 
 def serialEvent(evt):
     input = evt.readString()

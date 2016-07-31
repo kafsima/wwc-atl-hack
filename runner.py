@@ -29,9 +29,12 @@ class Event(LoggingEventHandler):
         # print(line)
 
     def postData(self, val):
+        val = float(val.strip())
         sensor_name = 'sensor_' + INSTANCE.hex[0:8]
 
-        data = {"temp": val}
+        timestamp = int(time.time())
+
+        data = {"timestamp": timestamp, "temp": val}
         db.child("temp_sensors").child(sensor_name).push(data)
 
 
